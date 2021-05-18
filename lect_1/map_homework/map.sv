@@ -1,13 +1,13 @@
 class map;
   
-   int assoc_array[string];
+   local int assoc_array[string];
   	
    
    function new //constructor
       (
-        int assoc_array[string] = '{"phone"  : 5,                                    
-                   		    		      "keys"   : 7,                                    
-                   		    		      "wallet" : 9}
+        int assoc_array[string] = '{"phone"  : 5,
+                   		    		"keys"   : 7,
+                   		    		"wallet" : 9}
       );    
          this.assoc_array = assoc_array; 
      
@@ -17,8 +17,15 @@ class map;
   
    function int get(string key);
      
-      return assoc_array[key];
-    
+     if (assoc_array.exists(key)) begin
+       
+        return assoc_array[key];
+     end
+     
+     else begin
+         return 0;
+     end
+     
    endfunction
   
   //put()
@@ -31,9 +38,14 @@ class map;
   //delete()
    function delete(string key);
   
-      assoc_array.delete(key);
+     if(assoc_array.exists(key)) begin
+       
+    	assoc_array.delete(key);
+      	return 1;
+     end
+     
+    else return 0;
     
-    
-   endfunction  
+  endfunction
   
 endclass
