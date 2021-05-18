@@ -5,10 +5,8 @@ class map;
    
    function new //constructor
       (
-        int assoc_array[string] = '{"phone"  : 5,
-                                    
-                   		    		      "keys"   : 7,
-                                    
+        int assoc_array[string] = '{"phone"  : 5,                                    
+                   		    		      "keys"   : 7,                                    
                    		    		      "wallet" : 9}
       );    
          this.assoc_array = assoc_array; 
