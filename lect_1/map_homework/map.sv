@@ -1,6 +1,6 @@
 class map;
   
-   int assoc_array[string];
+   local int assoc_array[string];
   	
    
    function new //constructor
