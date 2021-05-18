@@ -1,0 +1,52 @@
+Queue methods :
+
+1. Size()
+    - The size() method returns the number of items in the queue. If the queue is empty, it returns 0
+2. Insert()
+    - The insert() method inserts the given item at the specified index position
+3. Delete()
+    - If the index is not specified, then the delete() method deletes all the elements in the queue, leaving the
+     queue empty
+4. Pop_front()
+    - The pop_front() method removes and returns the first element of the queue
+5. Pop_back()
+    - The pop_back() method removes and returns the last element of the queue
+6. Push_front()
+    - The push_front() method inserts the given element at the front of the queue
+7.  Push_back()
+    -The push_back() method inserts the given element at the end of the queue
+
+Locator methods are supported :
+
+    — find() returns all the elements satisfying the given expression
+    — find_index() returns the indices of all the elements satisfying the given expression
+    — find_first() returns the first element satisfying the given expression
+    — find_first_index() returns the index of the first element satisfying the given expression
+    — find_last() returns the last element satisfying the given expression
+    — find_last_index() returns the index of the last element satisfying the given expression
+    - min() returns the element with the minimum value or whose expression evaluates to a minimum
+    — max() returns the element with the maximum value or whose expression evaluates to a maximum
+    — unique() returns all elements with unique values or whose expression evaluates to a unique value
+    — unique_index() returns the indices of all elements with unique values or whose expression
+      evaluates to a unique value
+
+Array ordering methods:
+
+    - reverse() reverses the order of the elements in the array. 
+    — sort() sorts the array in ascending order, optionally using the expression in the with clause. 
+    — rsort() sorts the array in descending order, optionally using the expression in the with clause
+    — shuffle() randomizes the order of the elements in the array. Specifying a with clause shall be a
+      compiler error
+
+Array reduction methods: 
+
+    - sum() returns the sum of all the array elements or, if a with clause is specified, returns the sum of
+    the values yielded by evaluating the expression for each array element
+    — product() returns the product of all the array elements or, if a with clause is specified, returns the
+    product of the values yielded by evaluating the expression for each array element
+    — and() returns the bitwise AND ( & ) of all the array elements or, if a with clause is specified,
+    returns the bitwise AND of the values yielded by evaluating the expression for each array element
+    — or() returns the bitwise OR ( | ) of all the array elements or, if a with clause is specified, returns the
+    bitwise OR of the values yielded by evaluating the expression for each array element
+    — xor() returns the bitwise XOR ( ^ ) of all the array elements or, if a with clause is specified,
+    returns the bitwise XOR of the values yielded by evaluating the expression for each array element
