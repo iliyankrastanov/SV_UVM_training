@@ -13,3 +13,11 @@ thus, SystemVerilog handles do not have the risks associated with C pointers.
 c)	SystemVerilog objects form the basis of an Object-Oriented data abstraction that provides true polymorphism.
 Class inheritance, abstract classes, and dynamic casting are powerful mechanisms, 
 which go way beyond the mere encapsulation mechanism provided by structs
+
+Typedef: 
+
+    - allows users to create their own names for type definitions that they will use frequently in their code.
+       Typedefs can be very convenient when building up complicated array definitions.
+    - A typedefis used to provide a forward declaration of the class.
+       In some cases, the class needs to be instantiated before the class declaration. 
+       In these kinds of situations, the typedef is used to provide a forward declaration of the class.
