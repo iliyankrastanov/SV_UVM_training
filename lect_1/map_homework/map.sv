@@ -1,6 +1,6 @@
 class map;
   
-   local int assoc_array[string];
+   int assoc_array[string];
   	
    
    function new //constructor
@@ -17,22 +17,24 @@ class map;
         return assoc_array[key];
      end     
      else begin
-         return 0;
+        return 0;
      end     
    endfunction
   
   //put()
-   function put(string key, int value);    
+   function void put(string key, int value);    
       assoc_array[key] = value;    
    endfunction  
   
   //delete()
-   function delete(string key);  
+   function bit delete(string key);  
      if(assoc_array.exists(key)) begin       
     	assoc_array.delete(key);
       	return 1;
      end     
-    else return 0;    
-  endfunction
+     else begin
+        return 0;
+     end
+   endfunction
   
 endclass
