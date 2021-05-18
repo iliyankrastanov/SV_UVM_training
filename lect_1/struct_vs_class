@@ -1,7 +1,15 @@
-On the surface, it might appear that class and struct provide equivalent functionality, and only one of them is needed. However, that is not true; class differs from struct in the following three fundamental ways:
+On the surface, it might appear that class and struct provide equivalent functionality, 
+and only one of them is needed. However, that is not true; class differs from struct in the following three fundamental ways:
 
-a)	SystemVerilog structs are strictly static objects; they are created either in a static memory location (global or module scope) or on the stack of an automatic task. Conversely, SystemVerilog objects (i.e., class instances) are exclusively dynamic; their declaration does not create the object. Creating an object is done by calling new.
+a)	SystemVerilog structs are strictly static objects; 
+they are created either in a static memory location (global or module scope) or on the stack of an automatic task. 
+Conversely, SystemVerilog objects (i.e., class instances) are exclusively dynamic; 
+their declaration does not create the object. Creating an object is done by calling new.
 
-b)	SystemVerilog objects are implemented using handles, thereby providing C-like pointer functionality. But SystemVerilog disallows casting handles onto other data types; thus, SystemVerilog handles do not have the risks associated with C pointers.
+b)	SystemVerilog objects are implemented using handles, 
+thereby providing C-like pointer functionality. But SystemVerilog disallows casting handles onto other data types; 
+thus, SystemVerilog handles do not have the risks associated with C pointers.
 
-c)	SystemVerilog objects form the basis of an Object-Oriented data abstraction that provides true polymorphism. Class inheritance, abstract classes, and dynamic casting are powerful mechanisms, which go way beyond the mere encapsulation mechanism provided by structs
+c)	SystemVerilog objects form the basis of an Object-Oriented data abstraction that provides true polymorphism.
+Class inheritance, abstract classes, and dynamic casting are powerful mechanisms, 
+which go way beyond the mere encapsulation mechanism provided by structs
