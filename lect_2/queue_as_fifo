@@ -1,0 +1,22 @@
+You want to use queue as a FIFO. What methods will you need ?
+What other methods does a queue have ? Where will you search for this information?
+-----------------------------------------------------------------------------------------------------------
+You want to use queue as a FIFO. What methods will you need ?
+
+function void push_front (input element_t item);	Inserts the given element at the front of the queue
+function element pop_back ();	Removes and returns the last element of the queue
+
+-----------------------------------------------------------------------------------------------------------
+What other methods does a queue have ?
+
+Queue Methods:
+function int size ();	Returns the number of items in the queue, 0 if empty
+function void insert (input integer index, input element_t item);	Inserts the given item at the specified index position
+function void delete ( [input integer index] );	Deletes the element at the specified index, and if not provided all elements will be deleted
+function element_t pop_front ();	Removes and returns the first element of the queue
+function void push_back (input element_t item);	Inserts the given element at the end of the queue
+
+-----------------------------------------------------------------------------------------------------------
+Where will you search for this information?
+
+The SV LRM
