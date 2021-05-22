@@ -1,0 +1,30 @@
+A function is meant to do some processing on the input and return a single value,
+whereas a task is more general and can calculate multiple result values and return
+them using output and inout type arguments. Tasks can contain simulation time 
+consuming elements such as @, posedge and others.
+
+  Both task and function are methods in Verilog and they have the ability to split up 
+a large code or procedure into smaller ones to make it easier to understand.Although
+both of them are methods but still there are a large number of differences:
+
+a) Task can enable both a task and function but function can only enable a function.
+
+b) A task can contain timing control constructs like delays and all and therefore
+can execute in non zero simulation time while function should not contain any delay
+or event and therefore always execute in zero simulation time.
+
+c) A task cannot return a value but has the ability to pass multiple values through
+output and input arguments but functions can return a single value and should not 
+use either output or input arguments.
+
+d) Disable statements can be used in a task means a task can be terminated using a
+disable statement but a function can not be terminated using disable.
+
+e) A task can use zero or more arguments which are of type input,output or input but
+for function there should be at least one input argument needs to be passed.
+
+f) A task can only be synthesized if it does not contain any timing construct while
+a function is always synthesized.
+
+g) A task is typically used within a statement while a function is called within a
+expression.
