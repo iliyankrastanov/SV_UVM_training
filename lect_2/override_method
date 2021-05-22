@@ -1,0 +1,12 @@
+A method of a class may be identified with the keyword
+virtual. Virtual methods are a basic polymorphic construct.
+A virtual method shall override a method in all of its base
+classes, whereas a non-virtual method shall only override a
+method in that class and its descendants. One way to view
+this is that there is only one implementation of a virtual
+method per class hierarchy, and it is always the one in the
+latest derived class.
+
+Virtual method overrides in subclasses shall have matching
+argument types, identical argument names, identical
+qualifiers, and identical directions to the prototype
