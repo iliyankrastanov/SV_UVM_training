@@ -1,4 +1,4 @@
-module clock_divider
+module clock_generator
    (
      input clk_in,
      input rst_b,
