@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module clock_divider_TB();
+module clock_generator_TB();
   
    reg clk_in;
    reg rst_b;
@@ -16,7 +16,7 @@ module clock_divider_TB();
  parameter clk3     = 1660000;
  parameter clk4     = 2000000; 
    
- clock_divider uut 
+ clock_generator uut 
   (
    .clk_in(clk_in),
    .rst_b(rst_b),
