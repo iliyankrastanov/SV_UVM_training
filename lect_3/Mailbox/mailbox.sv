@@ -1,3 +1,4 @@
+// To make errors less likely, we use parameterized mailboxes
 typedef mailbox #(string) str_mailbox;
 
 module mailbox_test();
