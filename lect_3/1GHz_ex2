@@ -1,0 +1,34 @@
+What are the reasonable time scales you could use to test a design 
+which is clocked at 1Ghz? How will you set them in your testbench?
+
+
+- The hertz is defined as one cycle per second. 
+- 1GHz (gigahertz) is equal to 1,000,000,000 (one billion) Hz (hertz). 
+- The design to be clocked at 1Ghz means that within one second there are 1,000,000,000 periods (cycles) of the clock signal.
+- A nanosecond (ns) is an SI unit of time equal to one billionth of a second, that is, 1 ⁄ 1 000 000 000 of a second, or 10^−9 seconds.
+
+ => The period of the clock signal (when the clock is 1GHz) is 1ns
+
+   Just an interesting fact: 3.335 nanoseconds (approximately) – time taken
+   by light to travel 1 metre in a vacuum.
+
+ => In the design, a clock with a frequency of 1GHz is set as follows:
+    `timescale 1ns / time_precision
+
+ => In the testbench, it is NOT reasonable to use a clock with a frequency
+    lower than 1GHz, because in this way for one period of the testbench
+    clock, several periods of the design clock will happen. This means that periods
+    of the clock signal from the design will be skipped. There are not visible to the
+    testbench.
+
+ => 1GHz frequency could be used in the testbench, i.e. `timescale 1ns / time_precision
+
+!!! In the test bench it is most reasonable to use a clock signal frequency higher
+     than 1GHz. Let's assume that in the design `timescale 1ns / 1ps, then it would be
+     reasonable for the testbench to set for example:
+
+`timescale 100ps / 1ps     --->  100 THz (terahertz)
+`timescale 10ps / 1ps      --->  10 THz (terahertz)
+`timescale 1ps / 1ps       --->  1 THz (terahertz)
+    
+ With a faster clock, some design problems can be noticed.
