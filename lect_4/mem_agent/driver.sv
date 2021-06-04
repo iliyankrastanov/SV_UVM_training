@@ -1,9 +1,6 @@
 `ifndef MEM_DRIVER
 `define MEM_DRIVER
 
-import uvm_pkg::*;
-`include "uvm_macros.svh"
-
 class mem_driver extends uvm_driver #(mem_seq_item);
  
   // Virtual Interface
