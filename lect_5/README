@@ -1,0 +1,37 @@
+MODULE
+
+Directory Structure :  
+
+ [project_name]_verif
+         |
+	 run  ------ commands how to run (Ex: compilation and simulation commands passing define values) 
+
+         |
+	 src 
+	   |
+              design   ----design related files
+
+	 verif
+	   |
+
+	   tb
+	     |
+	      
+	      src      --- interface related and top files
+           |
+           env         
+	     |
+	     agents    ---- Agent components : driver, monitor,....etc
+	     |
+	     ref_model ---- ref model related files
+	     |
+             top       --- top level env files , env,sb,coverage....etc
+ 
+           |
+           tests
+	      |
+	       sequence_lib 
+	            |
+		    src      ------sequences if any
+	      | 	    
+             src             ----- test cases, test list  
