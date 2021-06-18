@@ -36,20 +36,20 @@ class apb_agent extends uvm_agent;
 
   if(a_config == null)
      if(!uvm_config_db#(apb_agent_config)::get(this, "*", "apb_agent_config", a_config))
-       `uvm_fatal("APB_AGNT", "No apb_agent config")
+     `uvm_fatal("APB_AGNT", "No apb_agent config")
 
   if(get_is_active() == UVM_ACTIVE) begin
-    a_driver = apb_driver::type_id::create("a_driver",this);
-    a_sequencer = apb_sequencer::type_id::create("a_sequencer",this);
+     a_driver = apb_driver::type_id::create("a_driver",this);
+     a_sequencer = apb_sequencer::type_id::create("a_sequencer",this);
   end
  
-  a_monitor = apb_monitor::type_id::create("a_monitor",this);
+     a_monitor = apb_monitor::type_id::create("a_monitor",this);
   endfunction
 
   function void connect_phase(uvm_phase phase);
-    if(get_is_active() == UVM_ACTIVE) begin
-      a_driver.seq_item_port.connect(a_sequencer.seq_item_export);
-    end
+     if(get_is_active() == UVM_ACTIVE) begin
+        a_driver.seq_item_port.connect(a_sequencer.seq_item_export);
+     end
   endfunction
 endclass
 `endif
