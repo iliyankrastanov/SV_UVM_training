@@ -1,7 +1,6 @@
 `ifndef APB_AGENT_PKG
 `define APB_AGENT_PKG
 
-
 package apb_agent_pkg;
 
 import uvm_pkg::*;
