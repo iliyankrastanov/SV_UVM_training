@@ -14,10 +14,8 @@ class apb_driver extends uvm_driver #(apb_seq_item);
  
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-     //`uvm_error("Build phase started")
      if(!uvm_config_db#(virtual apb_inter_f)::get(this, "", "apb_inter_f", a_vif))
        `uvm_fatal("NO_VIF",{"virtual interface must be set for: ",get_full_name(),".a_vif"});
-       // `uvm_error("interface set")
   endfunction: build_phase
   
  
@@ -70,5 +68,4 @@ class apb_driver extends uvm_driver #(apb_seq_item);
     endtask
  
 endclass : apb_driver
-
 `endif
