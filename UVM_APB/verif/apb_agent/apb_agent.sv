@@ -35,7 +35,7 @@ class apb_agent extends uvm_agent;
     super.build_phase(phase);
 
   if(a_config == null)
-     if(!uvm_config_db#(apb_agent_config)::get(this, "*", "apb_agent_config", a_config))
+  if(!uvm_config_db#(apb_agent_config)::get(this, "*", "apb_agent_config", a_config))
      `uvm_fatal("APB_AGNT", "No apb_agent config")
 
   if(get_is_active() == UVM_ACTIVE) begin
