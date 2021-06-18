@@ -51,13 +51,9 @@ class mem_env extends uvm_env;
      agent = mem_agent::type_id::create("agent",this);
      a_agent = apb_agent::type_id::create("a_agent",this);
   
-     uvm_config_db#(virtual inter_f)::set(this, "agent","inter_f", vif);
      uvm_config_db#(agent_config)::set(this, "*", "agent_config", conf);
-   
-     uvm_config_db#(virtual apb_inter_f)::set(this, "a_agent","apb_inter_f", a_vif);
      uvm_config_db#(apb_agent_config)::set(this, "*", "apb_agent_config", a_conf);
 endfunction
-
 endclass: mem_env
 
 `endif
