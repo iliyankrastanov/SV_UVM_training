@@ -14,8 +14,8 @@ class apb_driver extends uvm_driver #(apb_seq_item);
  
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-     if(!uvm_config_db#(virtual apb_inter_f)::get(this, "", "apb_inter_f", a_vif))
-       `uvm_fatal("NO_VIF",{"virtual interface must be set for: ",get_full_name(),".a_vif"});
+    if(!uvm_config_db#(virtual apb_inter_f)::get(this, "", "apb_inter_f", a_vif))
+    `uvm_fatal("NO_VIF",{"virtual interface must be set for: ",get_full_name(),".a_vif"});
   endfunction: build_phase
   
  
@@ -26,9 +26,7 @@ class apb_driver extends uvm_driver #(apb_seq_item);
         a_vif.enbl <= 0;
         a_vif.slerr <= 0;
         forever begin
-           // @(posedge a_vif.clk);        
-            seq_item_port.get_next_item(req);
-            
+            seq_item_port.get_next_item(req);            
             $display("Transaction started");
 
             @(posedge a_vif.clk);
@@ -41,31 +39,29 @@ class apb_driver extends uvm_driver #(apb_seq_item);
     endtask
 
     task write_state();
-        a_vif.is_apb <= req.is_apb;
-        a_vif.paddr <= req.paddr;
-        a_vif.pwdata <= req.pwdata;
-        a_vif.pwrite <= 1'b1;
-        a_vif.psel <= 1'b1;
-        @(posedge a_vif.clk);
-        a_vif.enbl <= 1'b1;
-        @(posedge a_vif.clk);
-        a_vif.enbl <= 1'b0;
-        a_vif.psel <= 1'b0;
-        
+       a_vif.is_apb <= req.is_apb;
+       a_vif.paddr <= req.paddr;
+       a_vif.pwdata <= req.pwdata;
+       a_vif.pwrite <= 1'b1;
+       a_vif.psel <= 1'b1;
+       @(posedge a_vif.clk);
+       a_vif.enbl <= 1'b1;
+       @(posedge a_vif.clk);
+       a_vif.enbl <= 1'b0;
+       a_vif.psel <= 1'b0;       
     endtask
 
     task read_state();
-        a_vif.is_apb <= req.is_apb;
-        a_vif.paddr <= req.paddr;
-        a_vif.pwdata <= req.pwdata;
-        a_vif.pwrite <= 1'b0;
-        a_vif.psel <= 1'b1;
-        @(posedge a_vif.clk);
-        a_vif.enbl <= 1'b1;
-        @(posedge a_vif.clk);
-        a_vif.enbl <= 1'b0;
-        a_vif.psel <= 1'b0;
-    endtask
- 
+       a_vif.is_apb <= req.is_apb;
+       a_vif.paddr <= req.paddr;
+       a_vif.pwdata <= req.pwdata;
+       a_vif.pwrite <= 1'b0;
+       a_vif.psel <= 1'b1;
+       @(posedge a_vif.clk);
+       a_vif.enbl <= 1'b1;
+       @(posedge a_vif.clk);
+       a_vif.enbl <= 1'b0;
+       a_vif.psel <= 1'b0;
+    endtask 
 endclass : apb_driver
 `endif
